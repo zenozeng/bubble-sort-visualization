@@ -1,35 +1,36 @@
 body {
     background: #fff;
-    width: 700px;
-    margin: 0 auto;
+    max-width: 700px;
+    margin: 50px auto;
 }
 
 h1 {
     color: #000;
+    padding-bottom: 1em;
     font-weight: normal;
-    font-size: 14px;
-    float: right;
+    border-bottom: #333 3px solid;
     font-family: "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
-
 }
 
-#bubbles {
-    float: left;
+#bubbles, #bubbles li {
+    padding: 0;
+    margin: 0;
 }
 
 #bubbles li {
-    width: 500px;
-    background: rgb(255, 255, 155);
-    margin: 10px auto;
-    border-radius: 50%;
-    display: block;
+    background: #555;
+    /* border-radius: 50%; */
+    vertical-align: bottom;
+    display: inline-block;
+    font-weight: bold;
+    /* float: left; */
+    margin-right: 2px;
     width: 50px;
-    height: 50px;
-    color: #000;
+    height: 30px;
+    color: #fff;
     text-align: center;
     font-size: 16px;
-    line-height: 50px;
-    transition: width 1s, height 1s;
+    /* transition: width 1s, height 1s; */
 }
 
 #bubbles li.step {
@@ -37,5 +38,5 @@ h1 {
 }
 
 #bubbles li.cmp {
-    border: 3px solid red;
+    border-top: 5px solid #F08080;
 }

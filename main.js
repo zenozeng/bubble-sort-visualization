@@ -1,5 +1,5 @@
 // async version of bubble sort
-var bubbleSortAsync = function(array, onsort) {
+var bubbleSortAsync = function(array, onsort, callback) {
     var len = array.length;
     array = array.concat();
     var iter = function(i, j) {
@@ -17,7 +17,7 @@ var bubbleSortAsync = function(array, onsort) {
                 iter(i + 1, 0);
             }
         } else {
-            // done
+            callback(array);
         }
     };
     iter(0, 0);
@@ -29,8 +29,8 @@ var setData = function(data) {
     data.forEach(function(val, i) {
         var $this = $($bubbles[i]);
         $this.text(val);
-        var r = Math.sqrt(10 / val) * 40;
-        $this.css({width: r, height: r, lineHeight: r + 'px'});
+        var r = Math.sqrt(val / 10) * 200;
+        $this.css({paddingTop: r});
     });
 };
 
@@ -59,7 +59,9 @@ $(function() {
         return new Promise(function(resolve, reject) {
             setTimeout(function() {
                 resolve();
-            }, 2000);
+            }, 1000);
         });
+    }, function() {
+        $('#bubbles li.cmp').removeClass('cmp');
     });
 });
