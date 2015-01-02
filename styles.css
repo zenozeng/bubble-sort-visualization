@@ -17,15 +17,19 @@ h1 {
     margin: 0;
 }
 
+#bubbles {
+    font-size: 0; /* white-space-collapse: discard; */
+}
+
 #bubbles li {
-    background: #555;
+    background: rgba(0, 0, 0, .7);
     /* border-radius: 50%; */
     vertical-align: bottom;
     display: inline-block;
     font-weight: bold;
-    /* float: left; */
     margin-right: 2px;
     width: 50px;
+    position: relative;
     height: 30px;
     color: #fff;
     text-align: center;

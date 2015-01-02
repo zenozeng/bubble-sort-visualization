@@ -5,12 +5,14 @@ var bubbleSortAsync = function(array, onsort, callback) {
     var iter = function(i, j) {
         if(i < len) {
             if(j < len - 1 - i) {
+                var swap = false;
                 if(array[j] > array[j+1]) {
+                    swap = true;
                     var tmp = array[j];
                     array[j] = array[j + 1];
                     array[j + 1] = tmp;
                 }
-                onsort(i, j, j + 1, array.concat()).then(function() {
+                onsort(i, j, j + 1, swap, array.concat()).then(function() {
                     iter(i, j + 1);
                 });
             } else {
@@ -29,7 +31,7 @@ var setData = function(data) {
     data.forEach(function(val, i) {
         var $this = $($bubbles[i]);
         $this.text(val);
-        var r = Math.sqrt(val / 10) * 200;
+        var r = val * 20;
         $this.css({paddingTop: r});
     });
 };
@@ -44,7 +46,7 @@ $(function() {
     setData(data);
 
     // sort bubbles
-    bubbleSortAsync(data, function(i, j1, j2, array) {
+    bubbleSortAsync(data, function(i, j1, j2, swap, array) {
         var $bubbles = $('#bubbles li');
         // mark current step
         $($bubbles[i]).addClass('step');
@@ -53,9 +55,15 @@ $(function() {
         $($bubbles[j1]).addClass('cmp');
         $($bubbles[j2]).addClass('cmp');
         // update bubbles
-        setTimeout(function() {
-            setData(array);
-        }, 500);
+        if(swap) {
+            $($bubbles[j1]).animate({right: -50}, 500, function() {
+                $(this).css({right: ''});
+            });
+            $($bubbles[j2]).animate({left: -50}, 500, function() {
+                $(this).css({left: ''});
+                $bubbles[j1].parentNode.insertBefore($bubbles[j2], $bubbles[j1]);
+            });
+        }
         return new Promise(function(resolve, reject) {
             setTimeout(function() {
                 resolve();
