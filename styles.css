@@ -1,0 +1,32 @@
+body {
+    background: deepskyblue;
+    width: 700px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #fff;
+    font-weight: normal;
+    float: right;
+    font-family: "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+
+}
+
+#bubbles {
+    float: left;
+}
+
+#bubbles li {
+    width: 500px;
+    background: rgba(255, 255, 255, .4);
+    box-shadow: 0 0 8px #fff;
+    margin: 10px auto;
+    border-radius: 50%;
+    display: block;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    line-height: 50px;
+}
