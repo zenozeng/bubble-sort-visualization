@@ -7,9 +7,8 @@ body {
 h1 {
     color: #000;
     padding-bottom: 1em;
-    font-weight: normal;
     border-bottom: #333 3px solid;
-    font-family: "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+    font-family: "Times New Roman";
 }
 
 #bubbles, #bubbles li {
